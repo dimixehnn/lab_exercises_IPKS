@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Max Number Finder</title>
+</head>
+<body>
+<script>
+    // да внесеш 5 трицифрени броја, доколку не е трицифрен број да се печати alert message
+    // и да се најде кој од 5те броја има најголем збир на цифри
+
+    let prva = vtora = treta = 0;
+    let max = -Infinity;
+    let zbir = 0;
+    let maxzbir = -Infinity;
+
+    for (let i = 0; i < 5; i++) {
+        prva = vtora = treta = 0;
+        let x = parseInt(prompt("Enter a number"));
+
+        if (!isNaN(x)) {
+            if (x >= 100 && x <= 999) {
+                let tmp = x;
+                prva = tmp % 10;
+                vtora = Math.floor(tmp / 10 % 10);
+                treta = Math.floor(tmp / 100 % 10);
+                zbir = prva + vtora + treta;
+
+                if (zbir > maxzbir) {
+                    max = x;
+                    maxzbir = zbir;
+                }
+
+            } else {
+                alert("Invalid Number");
+                i--;
+                continue;
+            }
+        } else {
+            alert("Invalid Number");
+            i--;
+            continue;
+        }
+    }
+
+    alert(max);
+</script>
+</body>
+</html>
