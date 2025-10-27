@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Max Number Finder</title>
+</head>
+<body>
+<script>
+    //и последна да се претвори темперература од целзиус во фаренхајт и обратно
+
+    let x = parseInt(prompt("sto ke vnesuvas? 1 - za farenhajt, 2 - za celzius"));
+        if (x==1) {
+            let f = parseFloat(prompt("vnesi stepeni vo farenhajt kolega"));
+            if (!isNaN(f)) {
+                let c = (f - 32) * 5 / 9;
+                alert(f + " °F = " + c + " °C");
+            } else {
+                alert("kolega ova ne e broj");
+            }
+        }
+        else if(x==2){
+            let c = parseInt(prompt("vnesi stepeni vo celzius kolega"));
+            if(!isNaN(c)) {
+                let f = (c * 9/5) + 32;
+                alert(c + " °C = " + f + " °F");
+            }
+            else {
+                alert("kolega ova ne e broj");
+            }
+        }
+    else{
+        alert("ova ne e ponudeno kolega");
+    }
+
+</script>
+</body>
+</html>
