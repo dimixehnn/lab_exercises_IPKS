@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Max Number Finder</title>
+</head>
+<body>
+<script>
+    //втора беше да се внесе четирицифрен број и да се провери доколку е палиндром да се печати alert
+
+    let x = parseInt(prompt("vnesi broj kolega"));
+    if (!isNaN(x)) {
+        let first, second, third, fourth;
+        if(x >= 1000 && x <= 9999) {
+            first = x%10;
+            second =  Math.floor(x/10%10);
+            third =  Math.floor(x/100%10);
+            fourth = Math.floor(x/1000);
+            if(first == fourth && second == third) {
+                alert("palindrom e, jupi");
+            }
+            else{
+                alert("ne e palindrom kolega");
+            }
+        }
+        else {
+            alert("mora da vnesis cetiricifren broj kolega");
+        }
+    }
+    else{
+        alert("ova ne e bro j kolega");
+    }
+
+</script>
+</body>
+</html>
